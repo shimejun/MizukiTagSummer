@@ -16,4 +16,4 @@ scoreboard players reset @a d_barrier
 scoreboard players reset @a d_invisible
 
 execute as @a[scores={get_revive=1..},tag=!BBA] at @s run function mizsummer:revive
-execute as @e[tag=revive] at @s run particle minecraft:dust 100 100 100 0.8 ~ ~1 ~ 1 1 1 0.01 5 force @a[distance=..25,tag=!BBA]
+execute as @e[tag=revive] at @s run particle minecraft:dust 100 100 100 0.8 ~ ~1 ~ 1 1 1 0.01 5 force @a[distance=..25,tag=escape]
