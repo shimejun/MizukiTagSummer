@@ -1,0 +1,10 @@
+<アマスタtaglist>
+master 		ゲーム変数制御
+randomspawn 	逃げスポーン地点
+bbaspawn		鬼スポーン地点
+revive_spawnpoint  復活のお札出現ポイント、ランダムで一つ
+revive_spawnpoint_true  復活のお札出現ポイント、確定出現
+
+<変更>
+復活のお札が再出現しない不具合修正
+各種お札発動で複数個のお札を消費してしまう問題を修正
