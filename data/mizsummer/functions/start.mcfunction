@@ -5,8 +5,9 @@ scoreboard players reset @a catch_count
 scoreboard players reset @a get_revive
 
 tellraw @a {"text":"ゲームを開始します…","color":"gold"}
-execute unless entity @a[tag=BBA] run tellraw @a [{"text":"ゲームが開始できませんでした。ターボばばあとして参加するプレイヤーが見つかりません。","color":"red"}]
-execute unless entity @a[tag=escape] run tellraw @a [{"text":"ゲームが開始できませんでした。逃走者として参加するプレイヤーが見つかりません。","color":"red"}]
+execute unless entity @a[tag=BBA] run tellraw @a [{"text":"ばばあが見つからなかったため、ばばあをランダムで選択します…","color":"red"}]
+execute unless entity @a[tag=BBA] run function mizsummer:bbapick
+
 execute if entity @a[tag=BBA] if entity @a[tag=escape] run scoreboard players set @e[tag=master] gametime -180
 execute if entity @a[tag=BBA] if entity @a[tag=escape] run tag @e[tag=master] add playing
 tp @a[tag=BBA] @e[tag=bbaspawn,limit=1,sort=random]
