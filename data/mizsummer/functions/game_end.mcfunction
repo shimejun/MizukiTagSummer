@@ -8,6 +8,7 @@ execute as @a at @s run playsound minecraft:entity.ender_dragon.growl master @s 
 tellraw @a [{"text":"ゲーム終了！","color":"light_purple"}]
 execute if entity @a[tag=escaped] run tellraw @a [{"text":"脱出成功者: ","color":"gold"},{"selector":"@a[tag=escaped]","color":"green"}]
 execute unless entity @a[tag=escaped] run tellraw @a [{"text":"脱出成功者: ","color":"gold"},{"text":"なし","color":"red","bold":true}]
+tellraw @a [{"text":"ターボばばあ: ","color":"gold"},{"selector":"@a[tag=BBA]","color":"green"}]
 tellraw @a [{"text":"ターボばばあが捕まえた回数:  ","color":"gold"},{"score":{"name":"@a[tag=BBA,limit=1]","objective":"catch_count"},"color":"green"},{"text":"回","color":"green"}]
 clear @a carrot_on_a_stick
 clear @a warped_fungus_on_a_stick

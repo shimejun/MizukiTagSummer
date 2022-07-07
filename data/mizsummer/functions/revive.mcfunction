@@ -3,7 +3,7 @@ summon item ~ ~ ~ {PickupDelay:1,Item:{id:"minecraft:white_dye",Count:1b,tag:{di
 execute as @e[type=item,sort=nearest,limit=1] store result entity @s Item.tag.Unstackable int 1 run time query gametime
 scoreboard players add @s lives 1
 scoreboard players set @s p_revive -1
-tellraw @s {"text":"復活のお札を獲得した！","color":"green"}
+tellraw @s {"text":"🌊 復活のお札を獲得した！","color":"green"}
 tellraw @a[tag=!BBA] [{"selector":"@s","color":"aqua"},{"text":"が復活のお札を獲得した！","color":"green"}]
 kill @e[sort=nearest,limit=1,type=villager,tag=revive]
 
