@@ -17,6 +17,7 @@ execute as @e[tag=playing] if score @s revive_respawntime = @s revive_respawntim
 execute as @e[tag=playing] at @s if score @s gametime = @s gametime_limit run function mizsummer:timelimit
 execute as @e[tag=playing] at @s if score @s gametime >= @s gametime_limit run function mizsummer:intimelimit
 execute if entity @e[tag=playing,tag=timelimit] at @s run scoreboard players remove @s timelimit 1
+execute as @a[scores={get_revive=1..},tag=!BBA] at @s run function mizsummer:revive
 
 #プレイヤーのステータス表示、多分重いから消してもいい
 execute as @a[tag=!BBA,nbt=!{ActiveEffects:[{Id:11b},{Id:14b}]},scores={lives=0..},gamemode=!spectator] at @s run title @s actionbar [{"text":"ステータス：","color":"gold"},{"text":"異常なし   ","color":"white"},{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"}]
@@ -53,3 +54,6 @@ execute if entity @a[tag=BBA,distance=50..] run scoreboard players set @s beat 0
 execute as @a[tag=BBA,scores={jump=1..}] at @s run function mizsummer:bba_jump
 execute as @a[tag=BBA,scores={dash=1..}] at @s run particle minecraft:explosion ~ ~0.2 ~ 0.3 0.1 0.3 0 5 force @a[distance=..25]
 scoreboard players set @a dash 0
+
+#見た目の部分
+execute as @e[tag=revive] at @s run particle minecraft:dust 100 100 100 0.8 ~ ~1 ~ 1 1 1 0.01 5 force @a[distance=..25,tag=escape]

@@ -11,6 +11,3 @@ execute as @a[scores={d_grayglass=1..}] at @s run function mizsummer:settings/bb
 
 execute as @a[scores={d_barrier=1..}] at @s run function mizsummer:d_barrier 
 execute as @a[scores={d_invisible=1..}] at @s run function mizsummer:d_invisible
-
-execute as @a[scores={get_revive=1..},tag=!BBA] at @s run function mizsummer:revive
-execute as @e[tag=revive] at @s run particle minecraft:dust 100 100 100 0.8 ~ ~1 ~ 1 1 1 0.01 5 force @a[distance=..25,tag=escape]
