@@ -1,4 +1,4 @@
-execute if entity @e[tag=revive] run tellraw @a[tag=escape] {"text":"未取得の復活のお札の気配が消えた。","color":"red"}
+#復活のお札出現
 kill @e[tag=revive]
 execute as @e[tag=revive_spawnpoint,sort=random,limit=1] at @s run summon villager ~ ~ ~ {Invulnerable:1b,ActiveEffects:[{Id:14b,Duration:2000000,ShowParticles:false}],NoAI:1b,Silent:1b,DeathTime:19,Tags:["revive"]}
 execute as @e[tag=revive_spawnpoint_true] at @s run summon villager ~ ~ ~ {Invulnerable:1b,ActiveEffects:[{Id:14b,Duration:2000000,ShowParticles:false}],NoAI:1b,Silent:1b,DeathTime:19,Tags:["revive"]}

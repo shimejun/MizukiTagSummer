@@ -1,3 +1,4 @@
+#ゴールで実行
 tellraw @a [{"selector":"@s","color":"light_purple","bold":true},{"text":"がターボばばあから逃げ切った！","color":"gold"}]
 tag @s remove escape
 tag @s add escaped

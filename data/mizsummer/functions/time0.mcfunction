@@ -1,4 +1,4 @@
-#ゲーム開始の瞬間に実行
+#ゲーム開始カウントダウン0秒の瞬間に実行
 effect clear @a[tag=BBA] weakness
 gamemode spectator @a[tag=spectate]
 gamemode adventure @a[tag=escape]

@@ -1,3 +1,4 @@
+#非ゲーム時も常時実行 advancementとかでなるだけ少なくしたい
 execute as @e[tag=playing] at @s run function mizsummer:ingame
 execute as @a[scores={d_revive=1..}] at @s run function mizsummer:revive_transfer
 execute as @a[scores={p_revive=1..},tag=!BBA] at @s run function mizsummer:pick_revive

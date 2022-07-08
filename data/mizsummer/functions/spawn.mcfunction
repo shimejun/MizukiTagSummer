@@ -1,3 +1,4 @@
+#捕まったら実行
 clear @s carrot_on_a_stick
 clear @s warped_fungus_on_a_stick
 execute if entity @e[tag=master,scores={barrier_cards=1}] run give @s carrot_on_a_stick{display:{Name:'{"text":"結界のお札","color":"light_purple"}',Lore:['{"text":"使用すると結界を10秒間展開する。結界はばばあからの攻撃を防ぐ。"}','{"text":"効果中にばばあから攻撃されると、ばばあを5秒間スタンさせる。結界の使用中はパーティクルが出る。"}','{"text":"<消費アイテム>"}']}} 1

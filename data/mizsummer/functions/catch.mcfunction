@@ -1,3 +1,4 @@
+#逃走者が捕まったら実行
 advancement revoke @s only mizsummer:catch
 execute if entity @s[scores={lives=1..}] run tellraw @a [{"text":"⚡ ターボばばあ が","color":"gold"},{"selector":"@s","color":"aqua"},{"text":"を","color":"gold"},{"text":"捕まえた！","color":"red"}]
 execute if entity @s[scores={lives=0}] run tellraw @a [{"text":"⚡ ターボばばあ が","color":"gold","bold":true},{"selector":"@s","color":"red"},{"text":"を","color":"gold"},{"text":"捕まえた！","color":"dark_red"},{"text":"(脱落)","color":"gray","bold":false}]

@@ -1,4 +1,4 @@
-#死人に口なし
+#残機0のときに捕まって実行
 scoreboard players reset @s lives
 tag @s add dead
 tag @s remove escape

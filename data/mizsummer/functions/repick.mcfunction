@@ -1,3 +1,4 @@
+#鬼再抽選
 tag @a remove BBA
 tag @a remove escape
 team leave @a[team=turbo]

@@ -1,4 +1,4 @@
-#未脱出もとい未捕獲の逃走者が0人のタイミングで実行
+#生存中の逃走者が0人のタイミングで実行
 tag @e[tag=master] remove playing
 tag @e[tag=master] remove timelimit
 scoreboard players reset @a get_revive
