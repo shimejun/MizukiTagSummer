@@ -31,7 +31,16 @@ tag @a remove dead
 gamemode spectator @a[tag=!BBA]
 advancement revoke @a only mizsummer:catch
 effect give @a weakness 1000000 2 true
+
+#抽選アイテム再取得
 function mizsummer:reload
+
+#各種functionの実行予定をクリア
+schedule clear mizsummer:ingames/1s
+schedule clear mizsummer:ingames/2s
+schedule clear mizsummer:ingames/3s
+schedule clear mizsummer:ingames/4s
+schedule clear mizsummer:ingames/5s
 schedule clear mizsummer:ingames/sec
 schedule clear mizsummer:timelimits/90s
 schedule clear mizsummer:timelimits/60s
