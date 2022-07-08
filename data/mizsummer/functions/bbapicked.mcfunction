@@ -1,3 +1,4 @@
+#鬼抽選に当たった人が実行
 tellraw @a [{"selector":"@s","color":"aqua","bold":true},{"text":"が ばばあになった！","color":"gold"}]
 effect clear @a invisibility
 effect give @s invisibility 1000000 0 true
@@ -10,4 +11,4 @@ item replace entity @s armor.head with lime_dye
 
 clear @a red_stained_glass
 clear @a gray_stained_glass
-clear @a green_stained_glass
+clear @a lime_stained_glass
