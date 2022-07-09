@@ -43,12 +43,13 @@ execute unless entity @a[tag=escape] run function mizsummer:game_end
 execute as @a[tag=escape] at @s if entity @e[distance=..1,tag=goalpoint] run function mizsummer:goal
 
 #心音
-execute as @a[tag=BBA] at @s run execute as @a[tag=!BBA,distance=35..50] at @s run scoreboard players add @s beat 1
-execute as @a[tag=BBA] at @s run execute as @a[tag=!BBA,distance=20..34] at @s run scoreboard players add @s beat 2
-execute as @a[tag=BBA] at @s run execute as @a[tag=!BBA,distance=..19] at @s run scoreboard players add @s beat 4
+execute as @a[tag=BBA] at @s run execute as @a[tag=!BBA,distance=55..70] at @s run scoreboard players add @s beat 1
+execute as @a[tag=BBA] at @s run execute as @a[tag=!BBA,distance=30..54] at @s run scoreboard players add @s beat 2
+execute as @a[tag=BBA] at @s run execute as @a[tag=!BBA,distance=15..29] at @s run scoreboard players add @s beat 4
+execute as @a[tag=BBA] at @s run execute as @a[tag=!BBA,distance=..14] at @s run scoreboard players add @s beat 6
+execute as @a[tag=!BBA] at @s if entity @a[tag=BBA,distance=70..] run scoreboard players set @s beat 0
 scoreboard players set @a[gamemode=!adventure] beat 0
 execute as @a[tag=!BBA,scores={beat=24..}] at @s run function mizsummer:beatsound
-execute if entity @a[tag=BBA,distance=50..] run scoreboard players set @s beat 0
 
 #鬼の各種アクション
 execute as @a[tag=BBA,scores={jump=1..}] at @s run function mizsummer:bba_jump
