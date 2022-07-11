@@ -15,6 +15,7 @@ bossbar set minecraft:time2 players @a
 tag @e[tag=master] add timelimit
 execute as @a[scores={lives=1..}] run tellraw @s [{"text":"残機を失った…","color":"red"}]
 scoreboard players set @a lives 0
+clear @a white_dye
 
 #鬼を強化
 attribute @a[tag=BBA,limit=1] generic.movement_speed base set 0.5
