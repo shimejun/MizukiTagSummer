@@ -23,9 +23,9 @@ scoreboard players set @a catch_count 0
 execute if entity @a[tag=BBA] if entity @a[tag=escape] run bossbar set minecraft:time1 players @a
 
 #鬼の移動とエフェクト
-tp @a[tag=BBA] @e[tag=bbaspawn,limit=1,sort=random]
 effect give @a[tag=BBA] slowness 9 100 true
 execute if entity @a[tag=BBA] if entity @a[tag=escape] run attribute @a[tag=BBA,limit=1] generic.movement_speed base set 0.3
 
 #全部終わってゲーム開始
 execute if entity @a[tag=BBA] if entity @a[tag=escape] run schedule function mizsummer:ingames/5s 4s
+tp @a[tag=BBA] @e[tag=bbaspawn,limit=1,sort=random]
