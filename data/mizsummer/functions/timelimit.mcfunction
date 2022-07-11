@@ -1,8 +1,8 @@
 #脱出可能になった時に実行
 
 #見た目の部分
-title @a title [{"text":"脱出可能","color":"aqua","bold":true}]
-tellraw @a [{"text":"街の門が開いた。","color":"gold","bold":true}]
+title @a title [{"text":"脱出可能","color":"red","bold":true}]
+tellraw @a [{"text":"門が開いた。","color":"gold","bold":true}]
 execute as @a[tag=!BBA] at @s run playsound minecraft:block.iron_door.open block @s ~ ~ ~ 0.3 0.5
 execute as @a at @s run playsound minecraft:item.trident.thunder master @s ~ ~ ~ 0.5 0.5
 scoreboard players set @e[tag=master] timelimit 3600
@@ -13,6 +13,8 @@ bossbar set minecraft:time2 players @a
 
 #脱出可能をingameに伝える
 tag @e[tag=master] add timelimit
+execute as @a[scores={lives=1..}] run tellraw @s [{"text":"残機を失った…","color":"red"}]
+scoreboard players set @a lives 0
 
 #鬼を強化
 attribute @a[tag=BBA,limit=1] generic.movement_speed base set 0.5
