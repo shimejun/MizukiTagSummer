@@ -6,4 +6,4 @@ clear @s warped_fungus_on_a_stick
 effect give @s invisibility 4 0 true
 effect give @s weakness 1000000 0 true
 tp @s @e[sort=random,limit=1,tag=randomspawn]
-schedule function mizsummer:getitems 4t
+schedule function mizsummer:ingames/getitems 4t
