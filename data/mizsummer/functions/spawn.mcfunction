@@ -1,5 +1,5 @@
 #捕まったら実行
-tag @s add getitem
+tag @s add getitems
 clear @s carrot_on_a_stick
 clear @s warped_fungus_on_a_stick
 
