@@ -26,8 +26,10 @@ execute as @a[tag=spectate] at @s run title @s actionbar [{"text":"ステータ�
 execute as @a[tag=BBA] at @s run title @s actionbar [{"text":"捕まえた回数：","color":"gold"},{"score":{"name":"@s","objective":"catch_count"},"color": "aqua"},{"text":"回     ","color":"aqua"}]
 
 #アイテム使用
-execute as @a[scores={barrier=1..}] run function mizsummer:barrier
-execute as @a[scores={invisible=1..}] run function mizsummer:invisible
+execute as @a[scores={barrier=1..},tag=!barrier] run function mizsummer:barrier
+execute as @a[scores={barrier=1..},tag=barrier] run function mizsummer:nobarrier
+execute as @a[scores={invisible=1..},tag=!invisible] run function mizsummer:invisible
+execute as @a[scores={invisible=1..},tag=invisible] run function mizsummer:noinvisible
 execute as @a[nbt={ActiveEffects:[{Id:11b}]}] at @s unless entity @s[nbt={ActiveEffects:[{Id:14b}]}] run particle minecraft:dust 1 1 0 1 ~ ~0.5 ~ 0.5 1 0.5 0 7 force @a[distance=..25]
 execute as @a[nbt=!{ActiveEffects:[{Id:11b}]}] at @s run tag @s remove barrier
 execute unless entity @a[tag=barrier] run tp @e[tag=shield] 0 -200 0
