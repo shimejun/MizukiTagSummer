@@ -3,9 +3,6 @@
 execute as @e[tag=playing] run scoreboard players add @s gametime 1
 scoreboard players add @e[tag=master] revive_respawntime_count 1
 
-#カウントダウン0でゲーム開始
-execute if entity @e[tag=playing,scores={gametime=0}] run function mizsummer:time0
-
 #ボスバー編集
 execute as @e[tag=playing,scores={gametime=..0}] run bossbar set minecraft:time1 name [{"text":"ゲーム開始中…","color":"white"}]
 execute as @e[tag=playing,scores={gametime=0..}] run bossbar set minecraft:time1 name [{"text":"ターボばばあから逃げろ | 脱出可能まで：","color":"green"},{"score":{"name":"@s","objective":"sec"},"bold":true,"color":"red"},{"text":"秒","color":"red"}]
