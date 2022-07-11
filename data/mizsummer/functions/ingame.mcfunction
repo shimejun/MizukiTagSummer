@@ -32,6 +32,7 @@ execute as @a[scores={invisible=1..},tag=!invisible] run function mizsummer:invi
 execute as @a[scores={invisible=1..},tag=invisible] run function mizsummer:noinvisible
 execute as @a[nbt={ActiveEffects:[{Id:11b}]}] at @s unless entity @s[nbt={ActiveEffects:[{Id:14b}]}] run particle minecraft:dust 1 1 0 1 ~ ~0.5 ~ 0.5 1 0.5 0 7 force @a[distance=..25]
 execute as @a[nbt=!{ActiveEffects:[{Id:11b}]}] at @s run tag @s remove barrier
+execute as @a[nbt=!{ActiveEffects:[{Id:14b}]}] at @s run tag @s remove invisible
 execute unless entity @a[tag=barrier] run tp @e[tag=shield] 0 -200 0
 execute as @e[tag=shield] at @p[tag=barrier,limit=1] run tp @s ~ ~0.5 ~
 
@@ -52,7 +53,7 @@ execute as @a[tag=!BBA,scores={beat=24..}] at @s run function mizsummer:beatsoun
 
 #鬼の各種アクション
 execute as @a[tag=BBA,scores={jump=1..}] at @s run function mizsummer:bba_jump
-execute as @a[tag=BBA,scores={dash=1..}] at @s run particle minecraft:explosion ~ ~0.2 ~ 0.3 0.1 0.3 0 5 force @a[distance=..25]
+execute as @a[tag=BBA,scores={dash=1..}] at @s run particle minecraft:explosion ~ ~0.2 ~ 0.3 0.1 0.3 0 5 force @a[distance=..40]
 scoreboard players set @a dash 0
 
 #見た目の部分
