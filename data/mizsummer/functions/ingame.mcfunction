@@ -17,8 +17,12 @@ execute if entity @e[tag=playing,tag=timelimit] at @s run scoreboard players rem
 execute as @a[scores={get_revive=1..},tag=!BBA] at @s run function mizsummer:revive
 
 #プレイヤーのステータス表示、多分重いから消してもいい
-execute as @a[tag=!BBA,scores={lives=0..},tag=!spectate] at @s run title @s actionbar [{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"}]
-execute as @a[tag=!BBA,tag=dead] at @s run title @s actionbar [{"text":"脱落した…","color":"dark_red","bold":true}]
+execute as @a[tag=!BBA,scores={lives=0..},tag=!spectate,tag=!barrier,tag=!invisible] at @s run title @s actionbar [{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"},{"text":" -","color":"gray"}]
+execute as @a[tag=!BBA,scores={lives=0..},tag=!spectate,tag=barrier,tag=!invisible] at @s run title @s actionbar [{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"},{"text":" 🛡","color":"yellow"}]
+execute as @a[tag=!BBA,scores={lives=0..},tag=!spectate,tag=!barrier,tag=invisible] at @s run title @s actionbar [{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"},{"text":" ☁","color":"light_purple"}]
+execute as @a[tag=!BBA,scores={lives=0..},tag=!spectate,tag=barrier,tag=invisible] at @s run title @s actionbar [{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"},{"text":" ☁ 🛡","color":"white"}]
+
+execute as @a[tag=!BBA,tag=dead] at @s run title @s actionbar [{"text":"ゲームを観戦中","color":"gray","bold":true}]
 execute as @a[tag=spectate] at @s run title @s actionbar [{"text":"ゲームを観戦中","color":"green"},{"text":"  ターボばばあ：","color":"gold"},{"selector":"@a[tag=BBA]","color":"red"}]
 execute as @a[tag=BBA] at @s run title @s actionbar [{"text":"捕まえた回数：","color":"gold"},{"score":{"name":"@s","objective":"catch_count"},"color": "aqua"},{"text":"回     ","color":"aqua"}]
 
@@ -27,7 +31,7 @@ execute as @a[scores={barrier=1..},tag=!barrier] run function mizsummer:barrier
 execute as @a[scores={barrier=1..},tag=barrier] run function mizsummer:nobarrier
 execute as @a[scores={invisible=1..},tag=!invisible] run function mizsummer:invisible
 execute as @a[scores={invisible=1..},tag=invisible] run function mizsummer:noinvisible
-execute as @a[nbt={ActiveEffects:[{Id:11b}]}] at @s unless entity @s[nbt={ActiveEffects:[{Id:14b}]}] run particle minecraft:dust 1 1 0 1 ~ ~0.5 ~ 0.5 1 0.5 0 7 force @a[distance=..25]
+execute as @a[tag=barrier] at @s unless entity @s[nbt={ActiveEffects:[{Id:14b}]}] run particle minecraft:dust 1 1 0 1 ~ ~0.5 ~ 0.5 1 0.5 0 7 force @a[distance=..25]
 execute as @a[nbt=!{ActiveEffects:[{Id:11b}]}] at @s run tag @s remove barrier
 execute as @a[nbt=!{ActiveEffects:[{Id:14b}]}] at @s run tag @s remove invisible
 
