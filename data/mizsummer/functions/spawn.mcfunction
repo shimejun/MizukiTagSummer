@@ -6,4 +6,4 @@ clear @s warped_fungus_on_a_stick
 effect give @s invisibility 4 0 true
 effect give @s weakness 1000000 0 true
 execute at @e[sort=random,limit=1,tag=randomspawn,distance=50..] run tp @s ~ ~ ~
-schedule function mizsummer:ingames/getitems 20t
+execute unless entity @e[tag=master,limit=1,scores={timelimit=1..}] run schedule function mizsummer:ingames/getitems 20t

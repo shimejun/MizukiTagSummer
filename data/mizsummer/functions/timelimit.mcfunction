@@ -13,8 +13,6 @@ bossbar set minecraft:time2 players @a
 
 #脱出可能をingameに伝える
 tag @e[tag=master] add timelimit
-execute as @a[scores={lives=1..}] run tellraw @s [{"text":"残機を失った…","color":"red"}]
-scoreboard players set @a lives 0
 clear @a white_dye
 
 #鬼を強化
