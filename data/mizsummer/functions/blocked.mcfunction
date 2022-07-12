@@ -1,5 +1,4 @@
-#鬼の攻撃を防がれたら実行
-advancement revoke @s only mizsummer:blocked
+#攻撃を防がれたら実行
 effect give @s blindness 5 0 true
 effect give @s weakness 5 4 true
 effect give @s slowness 5 10 true

@@ -30,8 +30,6 @@ execute as @a[scores={invisible=1..},tag=invisible] run function mizsummer:noinv
 execute as @a[nbt={ActiveEffects:[{Id:11b}]}] at @s unless entity @s[nbt={ActiveEffects:[{Id:14b}]}] run particle minecraft:dust 1 1 0 1 ~ ~0.5 ~ 0.5 1 0.5 0 7 force @a[distance=..25]
 execute as @a[nbt=!{ActiveEffects:[{Id:11b}]}] at @s run tag @s remove barrier
 execute as @a[nbt=!{ActiveEffects:[{Id:14b}]}] at @s run tag @s remove invisible
-execute unless entity @a[tag=barrier] run tp @e[tag=shield] 0 -200 0
-execute as @a[tag=barrier] at @s facing entity @p[tag=BBA] feet run tp @e[tag=shield,sort=nearest,limit=1] ^ ^ ^0.5
 
 #逃走者人数0名を検知
 execute unless entity @a[tag=escape] run function mizsummer:game_end
