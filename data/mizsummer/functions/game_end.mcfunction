@@ -60,4 +60,4 @@ schedule function mizsummer:gameend_warp 8s
 effect clear @a invisibility
 scoreboard players set @e[tag=master] revive_respawntime_count 0
 
-#ToDo ゲーム終了後のテレポート処理
+kill @e[type=item]
