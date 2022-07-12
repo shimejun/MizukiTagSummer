@@ -40,7 +40,7 @@ execute as @a[tag=barrier] at @s facing entity @p[tag=BBA] feet run tp @e[tag=sh
 execute unless entity @a[tag=escape] run function mizsummer:game_end
 
 #ゴール検知
-execute as @a[tag=escape] at @s if entity @e[distance=..1,tag=goalpoint] run function mizsummer:goal
+execute as @a[tag=escape] at @s if entity @e[distance=..1,tag=goalpoint] if entity @e[tag=master,scores={timelimit=1..}] run function mizsummer:goal
 
 #心音
 execute as @a[tag=BBA] at @s run execute as @a[tag=!BBA,distance=55..70] at @s run scoreboard players add @s beat 1
