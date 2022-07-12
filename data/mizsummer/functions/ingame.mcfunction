@@ -17,12 +17,9 @@ execute if entity @e[tag=playing,tag=timelimit] at @s run scoreboard players rem
 execute as @a[scores={get_revive=1..},tag=!BBA] at @s run function mizsummer:revive
 
 #プレイヤーのステータス表示、多分重いから消してもいい
-execute as @a[tag=!BBA,nbt=!{ActiveEffects:[{Id:11b},{Id:14b}]},scores={lives=0..},gamemode=!spectator] at @s run title @s actionbar [{"text":"ステータス：","color":"gold"},{"text":"異常なし   ","color":"white"},{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"}]
-execute as @a[tag=!BBA,nbt={ActiveEffects:[{Id:11b}]},scores={lives=0..}] at @s run title @s actionbar [{"text":"ステータス：","color":"gold"},{"text":"結界有効   ","color":"green"},{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"}]
-execute as @a[tag=!BBA,nbt={ActiveEffects:[{Id:14b}]},scores={lives=0..}] at @s run title @s actionbar [{"text":"ステータス：","color":"gold"},{"text":"認識阻害有効   ","color":"green"},{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"}]
-execute as @a[tag=!BBA,nbt={ActiveEffects:[{Id:11b},{Id:14b}]},scores={lives=0..}] at @s run title @s actionbar [{"text":"ステータス：","color":"gold"},{"text":"結界・認識阻害有効   ","color":"green"},{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"}]
-execute as @a[tag=!BBA,tag=dead] at @s run title @s actionbar [{"text":"ステータス：","color":"gold"},{"text":"捕獲済","color":"dark_red","bold":true}]
-execute as @a[tag=spectate] at @s run title @s actionbar [{"text":"ステータス：","color":"gold"},{"text":"観戦中","color":"green"}]
+execute as @a[tag=!BBA,scores={lives=0..},tag=!spectate] at @s run title @s actionbar [{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"}]
+execute as @a[tag=!BBA,tag=dead] at @s run title @s actionbar [{"text":"脱落した…","color":"dark_red","bold":true}]
+execute as @a[tag=spectate] at @s run title @s actionbar [{"text":"ゲームを観戦中","color":"green"},{"text":"  ターボばばあ：","color":"gold"},{"selector":"@a[tag=BBA]","color":"red"}]
 execute as @a[tag=BBA] at @s run title @s actionbar [{"text":"捕まえた回数：","color":"gold"},{"score":{"name":"@s","objective":"catch_count"},"color": "aqua"},{"text":"回     ","color":"aqua"}]
 
 #アイテム使用
