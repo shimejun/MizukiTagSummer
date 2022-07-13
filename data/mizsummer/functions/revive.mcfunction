@@ -1,5 +1,5 @@
 #復活のお札を神社、または祠から手に入れた
-summon item ~ ~ ~ {PickupDelay:1,Item:{id:"minecraft:white_dye",Count:1b,tag:{display:{Name:'{"text":"復活のお札","color":"green"}',Lore:['{"text":"ばばあに捕まった時、消費して復活する。"}','{"text":"ドロップすると他の人に譲渡できる。"}','{"text":"<自動消費>","color":"white"}']}}}}
+summon item ^ ^ ^0.5 {PickupDelay:1,Item:{id:"minecraft:white_dye",Count:1b,tag:{display:{Name:'{"text":"復活のお札","color":"green"}',Lore:['{"text":"ばばあに捕まった時、消費して復活する。"}','{"text":"ドロップすると他の人に譲渡できる。"}','{"text":"<自動消費>","color":"white"}']}}}}
 execute as @e[type=item,sort=nearest,limit=1] store result entity @s Item.tag.Unstackable int 1 run time query gametime
 scoreboard players add @s lives 1
 scoreboard players set @s p_revive -1
