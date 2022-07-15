@@ -13,7 +13,6 @@ bossbar set minecraft:time2 players @a
 
 #脱出可能をingameに伝える
 tag @e[tag=master] add timelimit
-clear @a white_dye
 
 #鬼を強化
 attribute @a[tag=BBA,limit=1] generic.movement_speed base set 0.5
