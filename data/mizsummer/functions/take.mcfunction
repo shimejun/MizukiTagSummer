@@ -7,5 +7,7 @@ execute as @a[tag=!BBA] at @s run playsound minecraft:block.bell.use master @s ~
 scoreboard players remove @s[scores={lives=1..}] lives 1
 tellraw @s[scores={lives=0}] [{"text":"残り残機 0","color":"dark_red","bold":true}]
 execute if entity @s[nbt={Inventory:[{id:"minecraft:white_dye"}]}] run tellraw @s [{"text":"復活のお札を消費して復活した。","color":"gold"}]
+execute if entity @s[nbt={Inventory:[{id:"minecraft:white_dye"}]}] run playsound minecraft:item.totem.use master @s ~ ~ ~ 1 1
+execute if entity @s[nbt={Inventory:[{id:"minecraft:white_dye"}]}] run particle minecraft:totem_of_undying ^ ^ ^ 1 1 1 0.1 25 force @s
 clear @s white_dye 1
 execute as @s[scores={lives=0..}] at @s run function mizsummer:spawn
