@@ -22,8 +22,8 @@ execute as @a[tag=!BBA,scores={lives=0..},tag=!spectate,tag=barrier,tag=!invisib
 execute as @a[tag=!BBA,scores={lives=0..},tag=!spectate,tag=!barrier,tag=invisible] at @s run title @s actionbar [{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"},{"text":" ☁","color":"light_purple"}]
 execute as @a[tag=!BBA,scores={lives=0..},tag=!spectate,tag=barrier,tag=invisible] at @s run title @s actionbar [{"text":"残機：","color":"gold"},{"score":{"name":"@s","objective":"lives"},"color": "aqua"},{"text":" ☁ 🛡","color":"white"}]
 
-execute as @a[tag=!BBA,tag=dead] at @s run title @s actionbar [{"text":"ゲームを観戦中  ","color":"gray","bold":true},{"selector":"@p[tag=escape]","color":"green","bold":false},{"text":"の残機：","color":"gold","bold": false},{"score":{"name":"@p[tag=escape]","objective":"lives"},"color":"aqua","bold":false}]
-execute as @a[tag=spectate] at @s run title @s actionbar [{"text":"ゲームを観戦中","color":"green"},{"selector":"@p[tag=escape]","color":"green","bold":false},{"text":"の残機：","color":"gold","bold": false},{"score":{"name":"@p[tag=escape]","objective":"lives"},"color":"aqua","bold":false}]
+execute if entity @a[tag=escape] run execute as @a[tag=!BBA,tag=dead] at @s run title @s actionbar [{"text":"ゲームを観戦中  ","color":"gray","bold":true},{"selector":"@p[tag=escape]","color":"green","bold":false},{"text":"の残機：","color":"gold","bold": false},{"score":{"name":"@p[tag=escape]","objective":"lives"},"color":"aqua","bold":false}]
+execute if entity @a[tag=escape] run execute as @a[tag=spectate] at @s run title @s actionbar [{"text":"ゲームを観戦中","color":"green"},{"selector":"@p[tag=escape]","color":"green","bold":false},{"text":"の残機：","color":"gold","bold": false},{"score":{"name":"@p[tag=escape]","objective":"lives"},"color":"aqua","bold":false}]
 execute as @a[tag=BBA] at @s run title @s actionbar [{"text":"捕まえた回数：","color":"gold"},{"score":{"name":"@s","objective":"catch_count"},"color": "aqua"},{"text":"回     ","color":"aqua"}]
 
 #アイテム使用
